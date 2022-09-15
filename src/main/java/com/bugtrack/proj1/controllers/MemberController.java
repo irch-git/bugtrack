@@ -1,5 +1,14 @@
 package com.bugtrack.proj1.controllers;
 
-public class MemberController {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
+@RequestMapping("/members")
+public class MemberController {
+	
+	@RequestMapping("new")
+	public String displayMember() {
+		return "/member/new-member";
+	}
 }
