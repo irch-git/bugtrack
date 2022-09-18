@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
+//https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html
 	<head>
 	    <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +8,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<form action="#" th:action="@{/members/new}" th:object="${member}" method="POST" class="container__form">
+			<form th:action="@{/members/save}" th:object="${member}" method="POST" class="container__form">
 			  <div class="container__form--col-md-6 col-md-6">
 			    <label for="inputFname" class="container__form--form-label form-label">First Name</label>
 			    <input th:field="${member.memberFname}" type="text" class="container__form--form-control form-control" id="inputFname">
