@@ -11,7 +11,7 @@ import com.bugtrack.proj1.entities.Member;
 @RequestMapping("/members")
 public class MemberController {
 	
-	@RequestMapping(value = "new", method = RequestMethod.GET)
+	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public String displayMember(Model model) {
 		
 		Member aMember = new Member();
