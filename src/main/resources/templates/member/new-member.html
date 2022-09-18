@@ -7,18 +7,18 @@
 	</head>
 	<body>
 		<div class="container">
-			<form action="#" class="container__form">
+			<form action="#" th:action="@{/members/new}" th:object="${member}" method="POST" class="container__form">
 			  <div class="container__form--col-md-6 col-md-6">
 			    <label for="inputFname" class="container__form--form-label form-label">First Name</label>
-			    <input type="text" class="container__form--form-control form-control" id="inputFname">
+			    <input th:field="${member.memberFname}" type="text" class="container__form--form-control form-control" id="inputFname">
 			  </div>
 			  <div class="container__form--col-md-6 col-md-6">
 			    <label for="inputLname" class="container__form--form-label form-label">Last Name</label>
-			    <input type="text" class="container__form--form-control form-control" id="inputLname">
+			    <input th:field="${member.memberLname}" type="text" class="container__form--form-control form-control" id="inputLname">
 			  </div>
 			  <div class="container__form--form-col-6 col-6">
 			    <label for="inputEmail" class="contaienr__form--form-label form-label">Email Address</label>
-			    <input type="email" class="container__form--form-control form-control" id="inputEmail" placeholder="example@email.com">
+			    <input th:field="${memberEmail}" type="email" class="container__form--form-control form-control" id="inputEmail" placeholder="example@email.com">
 			  </div>
 			  <div class="container__col-12 col-12">
 			    <button type="submit" class="container__form--form-btn btn btn-primary">Sign up</button>
