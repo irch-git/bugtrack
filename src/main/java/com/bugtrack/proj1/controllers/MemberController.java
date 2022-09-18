@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.bugtrack.proj1.dao.IMemberRepository;
 import com.bugtrack.proj1.entities.Member;
 
 @Controller
@@ -14,6 +15,9 @@ public class MemberController {
 
 //https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
 //form posts	
+	
+	IMemberRepository memberRepo;
+	
 	@GetMapping("/new")
 	public String displayMember(Model model) {
 		
@@ -27,7 +31,9 @@ public class MemberController {
 	@PostMapping("/saved")
 	public String saveMember(Model model, Member member) {
 		
-		return "saved";
+		memberRepo.save(member);
+		
+		return "redirect:/member/new";
 	}
 	
 }
