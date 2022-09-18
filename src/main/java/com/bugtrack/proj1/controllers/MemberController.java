@@ -1,5 +1,6 @@
 package com.bugtrack.proj1.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ public class MemberController {
 //https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
 //form posts	
 	
+	@Autowired
 	IMemberRepository memberRepo;
 	
 	@GetMapping("/new")
@@ -33,7 +35,7 @@ public class MemberController {
 		
 		memberRepo.save(member);
 		
-		return "redirect:/member/new";
+		return "redirect:/members/new";
 	}
 	
 }

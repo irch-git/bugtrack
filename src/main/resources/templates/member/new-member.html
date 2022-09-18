@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-//https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html
+<!-- https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html -->
 	<head>
 	    <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<form th:action="@{/members/save}" th:object="${member}" method="POST" class="container__form">
+			<form action="/members/saved" th:object="${member}" method="POST" class="container__form">
 			  <div class="container__form--col-md-6 col-md-6">
 			    <label for="inputFname" class="container__form--form-label form-label">First Name</label>
 			    <input th:field="${member.memberFname}" type="text" class="container__form--form-control form-control" id="inputFname">
@@ -19,7 +19,7 @@
 			  </div>
 			  <div class="container__form--form-col-6 col-6">
 			    <label for="inputEmail" class="contaienr__form--form-label form-label">Email Address</label>
-			    <input th:field="${memberEmail}" type="email" class="container__form--form-control form-control" id="inputEmail" placeholder="example@email.com">
+			    <input th:field="${member.memberEmail}" type="email" class="container__form--form-control form-control" id="inputEmail" placeholder="example@email.com">
 			  </div>
 			  <div class="container__col-12 col-12">
 			    <button type="submit" class="container__form--form-btn btn btn-primary">Sign up</button>
