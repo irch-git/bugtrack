@@ -21,7 +21,7 @@ public class MemberController {
 	IMemberRepository memberRepo;
 	
 	@GetMapping("/new")
-	public String displayMember(Model model) {
+	public String displayMemberForm(Model model) {
 		
 		Member aMember = new Member();
 		
@@ -31,7 +31,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("/saved")
-	public String saveMember(Model model, Member member) {
+	public String saveMemberForm(Model model, Member member) {
 		
 		memberRepo.save(member);
 		
