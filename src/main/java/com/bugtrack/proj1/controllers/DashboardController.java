@@ -19,9 +19,9 @@ public class DashboardController {
 	@GetMapping("/")
 	public String displayDashboard(Model model) {
 		
-		List<Member> membersList = memRepo.findAll();
+		List<Member> membersDashboardList = memRepo.findAll();
 		
-		model.addAttribute("membersDashboard", membersList);
+		model.addAttribute("membersDashboard", membersDashboardList);
 		
 		return "main/dashboard";
 	}

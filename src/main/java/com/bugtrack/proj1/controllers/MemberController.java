@@ -1,5 +1,7 @@
 package com.bugtrack.proj1.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +38,16 @@ public class MemberController {
 		memberRepo.save(member);
 		
 		return "redirect:/members/new";
+	}
+	
+	@GetMapping
+	public String displayData(Model model) {
+		
+		List<Member> memberList = memberRepo.findAll();
+		
+		model.addAttribute(memberList);
+		
+		return "member/list-member";
 	}
 	
 }
