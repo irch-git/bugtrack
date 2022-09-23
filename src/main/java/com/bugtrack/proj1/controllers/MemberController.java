@@ -45,9 +45,9 @@ public class MemberController {
 		
 		List<Member> memberList = memberRepo.findAll();
 		
-		model.addAttribute(memberList);
+		model.addAttribute("memberControllerList", memberList);
 		
-		return "member/list-member";
+		return "member/list-members";
 	}
 	
 }

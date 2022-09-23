@@ -17,11 +17,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="memberListTempVar : ${memberList}">
-					<td th:text="${memberList.memberFname}" ></td>
-					<td th:text="${memberList.memberLname}"></td>
-					<td th:text="${memberList.memberEmail}"></td>
-					<td th:text="${memberList.memberCreated}"></td>
+				<tr th:each="memberListTempVar : ${memberControllerList}">
+					<td th:text="${memberListTempVar.memberFname}" ></td>
+					<td th:text="${memberListTempVar.memberLname}"></td>
+					<td th:text="${memberListTempVar.memberEmail}"></td>
+					<td th:text="${memberListTempVar.memberCreated}"></td>
 				</tr>
 			</tbody>
 		</table>
