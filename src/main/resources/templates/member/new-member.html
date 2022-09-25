@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <!-- https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html -->
-	<head>
-	    <meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"/>
-	</head>
+	<head th:replace="layout :: headTags"></head>
 	<body>
+		<nav th:replace="layout :: navBar"></nav>
 		<div class="container">
 			<form action="/members/saved" th:object="${member}" method="POST" class="container__form">
 			  <div class="container__form--col-md-6 col-md-6">
