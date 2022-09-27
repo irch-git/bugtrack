@@ -30,4 +30,22 @@
 	  </div>
 	</nav>
 	
+	<div th:fragment="form">
+	  <div class="container__form--col-md-6 col-md-6">
+	    <label for="inputFname" class="container__form--form-label form-label">First Name</label>
+	    <input th:field="${memberFormHtml.memberFname}" type="text" class="container__form--form-control form-control" id="inputFname">
+	  </div>
+	  <div class="container__form--col-md-6 col-md-6">
+	    <label for="inputLname" class="container__form--form-label form-label">Last Name</label>
+	    <input th:field="${memberFormHtml.memberLname}" type="text" class="container__form--form-control form-control" id="inputLname">
+	  </div>
+	  <div class="container__form--form-col-6 col-6">
+	    <label for="inputEmail" class="contaienr__form--form-label form-label">Email Address</label>
+	    <input th:field="${memberFormHtml.memberEmail}" type="email" class="container__form--form-control form-control" id="inputEmail" placeholder="example@email.com">
+	  </div>
+	  <div class="container__col-12 col-12">
+	    <button type="submit" class="container__form--form-btn btn btn-primary">Save</button>
+	  </div>
+	</div>
+	
 </html>
