@@ -10,42 +10,37 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bugtrack.proj1.dao.IMemberRepository;
-import com.bugtrack.proj1.entities.Member;
+import com.bugtrack.proj1.entities.MemberEntity;
 
 @Controller
-@RequestMapping("/members")
+@RequestMapping("/member")
 public class MemberController {
-
-//https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
-//form posts	
 	
 	@Autowired
-	IMemberRepository memberRepo;
+	IMemberRepository memRepo;
 	
 	@GetMapping("/new")
-	public String displayMemberForm(Model model) {
+	public String memberForm(Model model) {
 		
-		Member aMember = new Member();
-		
-		model.addAttribute("member", aMember);
+		MemberEntity memberFormController = new MemberEntity();
+		model.addAttribute("memberFormHtml", memberFormController);
 		
 		return "member/new-member";
 	}
 	
 	@PostMapping("/saved")
-	public String saveMemberForm(Model model, Member member) {
+	public String memberSaved(Model model, MemberEntity memberFormController) {
 		
-		memberRepo.save(member);
+		memRepo.save(memberFormController);
 		
-		return "redirect:/members/new";
+		return "redirect:/member";
 	}
 	
 	@GetMapping
-	public String displayData(Model model) {
+	public String memberData(Model model) {
 		
-		List<Member> memberList = memberRepo.findAll();
-		
-		model.addAttribute("memberControllerList", memberList);
+		List<MemberEntity> memberDataController = memRepo.findAll();
+		model.addAttribute("memberDataHtml", memberDataController);
 		
 		return "member/list-members";
 	}

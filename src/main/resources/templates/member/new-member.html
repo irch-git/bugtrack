@@ -4,24 +4,27 @@
 	<head th:replace="layout :: headTags"></head>
 	<body>
 		<nav th:replace="layout :: navBar"></nav>
+		
 		<div class="container">
-			<form action="/members/saved" th:object="${member}" method="POST" class="container__form">
-			  <div class="container__form--col-md-6 col-md-6">
-			    <label for="inputFname" class="container__form--form-label form-label">First Name</label>
-			    <input th:field="${member.memberFname}" type="text" class="container__form--form-control form-control" id="inputFname">
-			  </div>
-			  <div class="container__form--col-md-6 col-md-6">
-			    <label for="inputLname" class="container__form--form-label form-label">Last Name</label>
-			    <input th:field="${member.memberLname}" type="text" class="container__form--form-control form-control" id="inputLname">
-			  </div>
-			  <div class="container__form--form-col-6 col-6">
-			    <label for="inputEmail" class="contaienr__form--form-label form-label">Email Address</label>
-			    <input th:field="${member.memberEmail}" type="email" class="container__form--form-control form-control" id="inputEmail" placeholder="example@email.com">
-			  </div>
-			  <div class="container__col-12 col-12">
-			    <button type="submit" class="container__form--form-btn btn btn-primary">Sign up</button>
-			  </div>
-			</form>
+			<div class="row">
+				<form th:action="@{/members/saved}" th:object="${memberFormHtml}" method="POST" class="container__form">
+				  <div class="container__form--col-md-6 col-md-6">
+				    <label for="inputFname" class="container__form--form-label form-label">First Name</label>
+				    <input th:field="${memberFormHtml.memberFname}" type="text" class="container__form--form-control form-control" id="inputFname">
+				  </div>
+				  <div class="container__form--col-md-6 col-md-6">
+				    <label for="inputLname" class="container__form--form-label form-label">Last Name</label>
+				    <input th:field="${memberFormHtml.memberLname}" type="text" class="container__form--form-control form-control" id="inputLname">
+				  </div>
+				  <div class="container__form--form-col-6 col-6">
+				    <label for="inputEmail" class="contaienr__form--form-label form-label">Email Address</label>
+				    <input th:field="${memberFormHtml.memberEmail}" type="email" class="container__form--form-control form-control" id="inputEmail" placeholder="example@email.com">
+				  </div>
+				  <div class="container__col-12 col-12">
+				    <button type="submit" class="container__form--form-btn btn btn-primary">Save</button>
+				  </div>
+				</form>			
+			</div>
 		</div>
 	</body>
 </html>

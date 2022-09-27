@@ -4,7 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Project {
+public class ProjectEntity {
 
 	
 	@Id
@@ -14,12 +14,12 @@ public class Project {
 	private String projDescription; //in html, this will be a text box
 	
 	
-	public Project() {
+	public ProjectEntity() {
 		
 	}
 	
 	
-	public Project(String projTitle, String projDescription) {
+	public ProjectEntity(String projTitle, String projDescription) {
 		super();
 		this.projTitle = projTitle;
 		this.projDescription = projDescription;

@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Ticket {
+public class TicketEntity {
 //id, create, members, roles, status, comments, update
 	
 	
@@ -20,12 +20,12 @@ public class Ticket {
 	private Date ticketUpdate; //in html, this will given by today's date
 	
 	
-	public Ticket() {
+	public TicketEntity() {
 		
 	}
-
 	
-	public Ticket(Date ticketCreated, String ticketRoles, String ticketStatus, String ticketComments,
+	
+	public TicketEntity(Date ticketCreated, String ticketRoles, String ticketStatus, String ticketComments,
 			Date ticketUpdate) {
 		super();
 		this.ticketCreated = ticketCreated;

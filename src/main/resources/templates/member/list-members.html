@@ -5,23 +5,28 @@
 	<head th:replace="layout :: headTags"></head>
 	<body>
 		<nav th:replace="layout :: navBar"></nav>
-		<table>
-			<thead>
-				<tr>
-					<th>Member first name</th>
-					<th>Member last name</th>
-					<th>Member email</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="memberListTempVar : ${memberControllerList}">
-					<td th:text="${memberListTempVar.memberFname}" ></td>
-					<td th:text="${memberListTempVar.memberLname}"></td>
-					<td th:text="${memberListTempVar.memberEmail}"></td>
-					<td th:text="${memberListTempVar.memberCreated}"></td>
-				</tr>
-			</tbody>
-		</table>
+		
+		<div class="container">
+			<div class="row">
+				<table>
+					<thead>
+						<tr>
+							<th>Member first name</th>
+							<th>Member last name</th>
+							<th>Member email</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="memberDataTempVar : ${memberDataHtml}">
+							<td th:text="${memberDataTempVar.memberFname}" ></td>
+							<td th:text="${memberDataTempVar.memberLname}"></td>
+							<td th:text="${memberDataTempVar.memberEmail}"></td>
+							<td th:text="${memberDataTempVar.memberCreated}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</body>
 
 </html>

@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Member {
+public class MemberEntity {
 	
 	
 	@Id
@@ -20,12 +20,12 @@ public class Member {
 	private Date memberCreated;	//in html, this will be given by today's date
 	
 	
-	public Member() {
+	public MemberEntity() {
 		
 	}
 	
 	
-	public Member(String memberFname, String memberLname, String memberEmail, Date memberCreated) {
+	public MemberEntity(String memberFname, String memberLname, String memberEmail, Date memberCreated) {
 		super();
 		this.memberFname = memberFname;
 		this.memberLname = memberLname;

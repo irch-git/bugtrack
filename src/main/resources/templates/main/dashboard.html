@@ -8,22 +8,24 @@
 
 		
 		<div class="container">
-			<table>
-				<thead>
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="memberTempVar : ${membersDashboard}">
-						<td th:text="${memberTempVar.memberFname}"/>
-						<td th:text="${memberTempVar.memberLname}"/>
-						<td th:text="${memberTempVar.memberEmail}"/>
-					</tr>
-				</tbody>
-			</table>
+			<div class="row">			
+				<table>
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Email</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="dashboardDataTempVar : ${dashboardDataHtml}">
+							<td th:text="${dashboardDataTempVar.memberFname}"/>
+							<td th:text="${dashboardDataTempVar.memberLname}"/>
+							<td th:text="${dashboardDataTempVar.memberEmail}"/>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</body>
 </html>
