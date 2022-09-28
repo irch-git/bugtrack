@@ -22,19 +22,19 @@ public class DashboardController {
 	@GetMapping
 	public String dashboardDisplay(Model model) {
 		
-		MemberEntity dashboardFormController = new MemberEntity();
-		model.addAttribute("dashboardFormHtml", dashboardFormController);
+		MemberEntity memberFormController = new MemberEntity();
+		model.addAttribute("memberFormHtml", memberFormController);
 		
-		List<MemberEntity> dashboardDataController = memRepo.findAll();
-		model.addAttribute("dashboardDataHtml", dashboardDataController);
+		List<MemberEntity> memberDataController = memRepo.findAll();
+		model.addAttribute("memberDataHtml", memberDataController);
 		
 		return "main/dashboard";
 	}
 	
 	@PostMapping("/saved")
-	public String dashboardSaved(Model model, MemberEntity dashboardFormController) {
+	public String dashboardSaved(Model model, MemberEntity memberFormController) {
 		
-		memRepo.save(dashboardFormController);
+		memRepo.save(memberFormController);
 		
 		return "redirect:/";
 	}

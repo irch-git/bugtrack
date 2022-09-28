@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 	<head th:fragment="headTag">
 	    <meta charset="utf-8">
@@ -10,7 +10,7 @@
 	
 	<nav th:fragment="navBar" class="navbar navbar-expand-lg navbar-dark bg-dark">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" th:href="@{/}">Navbar</a>
+	    <a class="navbar-brand">&lt;Bug Tracker&gt;</a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
@@ -30,7 +30,7 @@
 	  </div>
 	</nav>
 	
-	<div th:fragment="form">
+	<div th:fragment="memForm">
 	  <div class="container__form--col-md-6 col-md-6">
 	    <label for="inputFname" class="container__form--form-label form-label">First Name</label>
 	    <input th:field="${memberFormHtml.memberFname}" type="text" class="container__form--form-control form-control" id="inputFname">
@@ -46,6 +46,31 @@
 	  <div class="container__col-12 col-12">
 	    <button type="submit" class="container__form--form-btn btn btn-primary">Save</button>
 	  </div>
+	</div>
+	
+	<div th:fragment="memData" class="container">
+		<div class="row">
+			<table>
+				<thead>
+					<tr>
+						<th>Member ID</th>
+						<th>Member First Name</th>
+						<th>Member Last Name</th>
+						<th>Member Email</th>
+						<th>Member Created</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="memberDataTempVar : ${memberDataHtml}">
+						<td th:text="${memberDataTempVar.memberId}" ></td>
+						<td th:text="${memberDataTempVar.memberFname}" ></td>
+						<td th:text="${memberDataTempVar.memberLname}"></td>
+						<td th:text="${memberDataTempVar.memberEmail}"></td>
+						<td th:text="${memberDataTempVar.memberCreated}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 	
 </html>

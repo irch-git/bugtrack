@@ -1,36 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 <!-- https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html -->
-	<head th:replace="layout :: headTags"></head>
+	<head th:replace="layouts :: headTag"></head>
 
 	<body>
-		<nav th:replace="layout :: navBar"></nav>
+		<nav th:replace="layouts :: navBar"></nav>
 		<div class="container">
 			<div class="row">
-				<form th:action="@{/saved}" th:object="${dashboardFormHtml}" method="POST" class="container__form">
-					<div th:replace="layouts :: form"></div>
+				<form th:action="@{/saved}" th:object="${memberFormHtml}" method="POST" class="container__form">
+					<div th:replace="layouts :: memForm"></div>
 				</form>			
 			</div>
 		</div>
-		<div class="container">
-			<div class="row">			
-				<table>
-					<thead>
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Email</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="dashboardDataTempVar : ${dashboardDataHtml}">
-							<td th:text="${dashboardDataTempVar.memberFname}"/>
-							<td th:text="${dashboardDataTempVar.memberLname}"/>
-							<td th:text="${dashboardDataTempVar.memberEmail}"/>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+		<div th:replace="layouts :: memData"></div>
 	</body>
 </html>

@@ -13,7 +13,7 @@ import com.bugtrack.proj1.dao.IMemberRepository;
 import com.bugtrack.proj1.entities.MemberEntity;
 
 @Controller
-@RequestMapping("/member")
+@RequestMapping("/members")
 public class MemberController {
 	
 	@Autowired
@@ -33,7 +33,7 @@ public class MemberController {
 		
 		memRepo.save(memberFormController);
 		
-		return "redirect:/member";
+		return "redirect:/members";
 	}
 	
 	@GetMapping

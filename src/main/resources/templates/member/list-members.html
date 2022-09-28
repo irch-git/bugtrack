@@ -2,31 +2,11 @@
 
 <html xmlns:th="https://www.thymeleaf.org">
 
-	<head th:replace="layout :: headTags"></head>
+	<head th:replace="layouts :: headTag"></head>
 	<body>
-		<nav th:replace="layout :: navBar"></nav>
+		<nav th:replace="layouts :: navBar"></nav>
 		
-		<div class="container">
-			<div class="row">
-				<table>
-					<thead>
-						<tr>
-							<th>Member first name</th>
-							<th>Member last name</th>
-							<th>Member email</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="memberDataTempVar : ${memberDataHtml}">
-							<td th:text="${memberDataTempVar.memberFname}" ></td>
-							<td th:text="${memberDataTempVar.memberLname}"></td>
-							<td th:text="${memberDataTempVar.memberEmail}"></td>
-							<td th:text="${memberDataTempVar.memberCreated}"></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+		<div th:replace="layouts :: memData"></div>
 	</body>
 
 </html>
