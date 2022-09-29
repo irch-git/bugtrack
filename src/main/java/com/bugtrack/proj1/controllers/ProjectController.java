@@ -27,7 +27,7 @@ public class ProjectController {
 	}
 	
 	@PostMapping("/saved")
-	public projectSaved(Model model, ProjectEntity projectFormController) {
+	public String projectSaved(Model model, ProjectEntity projectFormController) {
 		
 		projRepo.save(projectFormController);
 		

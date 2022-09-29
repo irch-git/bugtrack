@@ -1,15 +1,18 @@
 package com.bugtrack.proj1.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class ProjectEntity {
 
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long projId; //in html, this will be given by db
+	private Long projId; //in html, this will be given by db
+	
 	private String projTitle; //in html, this will be a text field
 	private String projDescription; //in html, this will be a text box
 	
