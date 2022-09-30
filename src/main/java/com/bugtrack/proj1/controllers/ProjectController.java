@@ -1,5 +1,7 @@
 package com.bugtrack.proj1.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +33,15 @@ public class ProjectController {
 		
 		projRepo.save(projectFormController);
 		
-		return "redirect:/projects/new";
+		return "redirect:/projects";
 	}
 	
+	@GetMapping
+	public String projectData(Model model) {
+		
+		List<ProjectEntity> projectDataController = projRepo.findAll();
+		model.addAttribute("projectDataHtml", projectDataController);
+		
+		return "project/list-projects";
+	}
 }

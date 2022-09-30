@@ -25,6 +25,12 @@
 	        <li class="nav-item">
 	          <a class="nav-link" th:href="@{/members/new}">Add Member</a>
 	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" th:href="@{/projects}">All Projects</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" th:href="@{/projects/new}">Add Project</a>
+	        </li>
 	      </ul>
 	    </div>
 	  </div>
@@ -44,7 +50,7 @@
 	    <input th:field="${memberFormHtml.memberEmail}" type="email" class="container__form--form-control form-control" id="inputEmail" placeholder="example@email.com">
 	  </div>
 	  <div class="container__col-12 col-12">
-	    <button type="submit" class="container__form--form-btn btn btn-primary">Save</button>
+	    <button type="submit" class="container__form--form-btn btn btn-primary">Save Member</button>
 	  </div>
 	</div>
 	
@@ -67,6 +73,41 @@
 						<td th:text="${memberDataTempVar.memberLname}"></td>
 						<td th:text="${memberDataTempVar.memberEmail}"></td>
 						<td th:text="${memberDataTempVar.memberCreated}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div th:fragment="projForm">					
+	  <div class="container__form--col-md-6 col-md-6">
+	    <label for="inputProjTitle" class="container__form--form-label form-label">Project Title</label>
+	    <input th:field="${projectFormHtml.projTitle}" type="text" class="container__form--form-control form-control" id="inputProjTitle">
+	  </div>
+	  <div class="container__form--col-md-6 col-md-6">
+	    <label for="inputProjTitle" class="container__form--form-label form-label">Project Description</label>
+	    <textarea th:field="${projectFormHtml.projDescription}" class="container__form--form-control form-control" id="inputProjDescription"></textarea>
+	  </div>
+	  <div class="container__col-12 col-12">
+	  	<button class="container__form--form-btn btn btn-primary" type="submit">Save Project</button>
+	  </div>
+	</div>
+	
+	<div th:fragment="projData" class="container">
+		<div class="row">
+			<table>
+				<thead>
+					<tr>
+						<th>Project ID</th>
+						<th>Project Title</th>
+						<th>Project Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="projectDataTempVar : ${projectDataHtml}">
+						<td th:text="${projectDataTempVar.projId}"></td>
+						<td th:text="${projectDataTempVar.projTitle}"></td>
+						<td th:text="${projectDataTempVar.projDescription}"></td>
 					</tr>
 				</tbody>
 			</table>

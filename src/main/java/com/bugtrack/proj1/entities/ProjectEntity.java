@@ -27,26 +27,39 @@ public class ProjectEntity {
 		this.projTitle = projTitle;
 		this.projDescription = projDescription;
 	}
-	
-	
-	public long getProjId() {
+
+
+	public Long getProjId() {
 		return projId;
 	}
-	public void setProjId(long projId) {
+
+
+	public void setProjId(Long projId) {
 		this.projId = projId;
 	}
+
+
 	public String getProjTitle() {
 		return projTitle;
 	}
+
+
 	public void setProjTitle(String projTitle) {
 		this.projTitle = projTitle;
 	}
+
+
 	public String getProjDescription() {
 		return projDescription;
 	}
+
+
 	public void setProjDescription(String projDescription) {
 		this.projDescription = projDescription;
 	}
+	
+	
+
 	
 	
 }

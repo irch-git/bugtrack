@@ -9,19 +9,11 @@
 		
 		<div class="container">
 			<div class="row">
-				<form>
-				  <div class="container__form--col-md-6 col-md-6">
-				    <label for="inputProjTitle" class="container__form--form-label form-label">Project Title</label>
-				    <input th:field="${projectFormHtml.projTitle}" type="text" class="container__form--form-control form-control" id="inputProjTitle">
-				  </div>
-				  <div class="container__form--col-md-6 col-md-6">
-				    <label for="inputProjTitle" class="container__form--form-label form-label">Project Title</label>
-				    <textarea th:field="${projectFormHtml.projDescription}" type="text" class="container__form--form-control form-control" id="inputProjDescription"></textarea>
-				  </div>
+				<form th:action="@{/projects/saved}" th:object="${projectFormHtml}" method="POST">
+					<div th:replace="layouts :: projForm"></div>
 				</form>
 			</div>
 		</div>
-		
 		
 	</body>
 </html>
