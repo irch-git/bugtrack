@@ -29,9 +29,9 @@ public class MemberController {
 	}
 	
 	@PostMapping("/saved")
-	public String memberSaved(Model model, MemberEntity memberFormController) {
+	public String memberSaved(Model model, MemberEntity memberFormHtml) {
 		
-		memRepo.save(memberFormController);
+		memRepo.save(memberFormHtml);
 		
 		return "redirect:/members";
 	}

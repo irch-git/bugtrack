@@ -59,20 +59,16 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Member ID</th>
 						<th>Member First Name</th>
 						<th>Member Last Name</th>
 						<th>Member Email</th>
-						<th>Member Created</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="memberDataTempVar : ${memberDataHtml}">
-						<td th:text="${memberDataTempVar.memberId}" ></td>
 						<td th:text="${memberDataTempVar.memberFname}" ></td>
 						<td th:text="${memberDataTempVar.memberLname}"></td>
 						<td th:text="${memberDataTempVar.memberEmail}"></td>
-						<td th:text="${memberDataTempVar.memberCreated}"></td>
 					</tr>
 				</tbody>
 			</table>
@@ -98,14 +94,12 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Project ID</th>
 						<th>Project Title</th>
 						<th>Project Description</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="projectDataTempVar : ${projectDataHtml}">
-						<td th:text="${projectDataTempVar.projId}"></td>
 						<td th:text="${projectDataTempVar.projTitle}"></td>
 						<td th:text="${projectDataTempVar.projDescription}"></td>
 					</tr>

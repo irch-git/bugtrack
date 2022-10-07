@@ -7,23 +7,27 @@
 	
 		<nav th:replace="layouts :: navBar"></nav>
 		
+		<!-- 
 		<div class="container">
 			<div class="row">
-				<form th:action="@{/saved}" th:object="${memberFormHtml}" method="POST" class="container__form">
+				<form th:action="@{/memSaved}" th:object="${memberFormHtml}" method="POST" class="container__form">
 					<div th:replace="layouts :: memForm"></div>
 				</form>	
 			</div>
 		</div>
-		
+		 -->
+		 
 		<div th:replace="layouts :: memData"></div>
 		
+		<!--
 		<div class="container">
 			<div class="row">
-				<form th:action="@{/saved}" th:object="${projectFormHtml}" method="POST" class="container__form">
+				<form th:action="@{/projSaved}" th:object="${projectFormHtml}" method="POST" class="container__form">
 					<div th:replace="layouts :: projForm"></div>
 				</form>			
 			</div>
 		</div>
+		 -->
 		
 		<div th:replace="layouts :: projData"></div>
 		

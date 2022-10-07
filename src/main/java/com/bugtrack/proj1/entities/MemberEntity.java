@@ -13,7 +13,8 @@ public class MemberEntity {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long memberId; //in html, this will be given by db
+	private Long memberId; //in html, this will be given by db
+	
 	private String memberFname; //in html, this will be a text field 
 	private String memberLname; //in html, this will be a text field
 	private String memberEmail; //in html, this will be a text field
@@ -32,35 +33,53 @@ public class MemberEntity {
 		this.memberEmail = memberEmail;
 		this.memberCreated = memberCreated;
 	}
-	
-	
-	public long getMemberId() {
+
+
+	public Long getMemberId() {
 		return memberId;
 	}
-	public void setMemberId(long memberId) {
+
+
+	public void setMemberId(Long memberId) {
 		this.memberId = memberId;
 	}
+
+
 	public String getMemberFname() {
 		return memberFname;
 	}
+
+
 	public void setMemberFname(String memberFname) {
 		this.memberFname = memberFname;
 	}
+
+
 	public String getMemberLname() {
 		return memberLname;
 	}
+
+
 	public void setMemberLname(String memberLname) {
 		this.memberLname = memberLname;
 	}
+
+
 	public String getMemberEmail() {
 		return memberEmail;
 	}
+
+
 	public void setMemberEmail(String memberEmail) {
 		this.memberEmail = memberEmail;
 	}
+
+
 	public Date getMemberCreated() {
 		return memberCreated;
 	}
+
+
 	public void setMemberCreated(Date memberCreated) {
 		this.memberCreated = memberCreated;
 	}
